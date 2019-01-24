@@ -1,0 +1,50 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ES5 Assignment 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <pre>
+what is prototype and use of the prototype?
+
+- All javascript object inherit properties and methods from a prototype.
+- previously to add the property to a a constructor you must add it to the constructor function.
+-with use of the prototype we can achieve this.
+-prototype allow to inherit properties and methods.
+
+prototype inheritance:-
+-date object inherts from date.prototype.
+-Array objects inherts from Array.prototype.
+
+object.prototype is on the top of the prototype inheritance chain.
+date object array object inhertis from object object.prototype.
+
+
+use of the prototype:-
+-using prototype makes for faster object creation,since that function does not have to re-created each time a new object is created.
+
+one example is also shown below how prototype works in console output.
+</pre>
+
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        Person.prototype.fullName = function() {
+            return this.firstName + ' ' + this.lastName;
+        }
+
+        let getData = new Person("suarubh", "shau");
+
+        console.log(getData.fullName());
+    </script>
+</body>
+
+</html>

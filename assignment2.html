@@ -1,0 +1,100 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<pre>
+
+how many ways we can create mutiple objects?
+- Object can be created in different ways:-
+    a)object literal.
+    b)object constructor.
+    c)factrory function.
+    d)function constructor.
+    e)prototype.
+
+a)object literal:-
+
+- object literal can be crated as below:-
+    var obj={firstName:"peter",lastName:"parker"}
+
+b)object constructor:-
+-object constructor can be created as following way:-
+var person=new object();
+person.firstName="peter";
+person.lastName="parker";
+
+c)factory function:-
+
+-factory function allows to encapuslate and re-use the logic for creating similar objects.
+
+var personInfo= function(name,age)
+{
+    var result=new Object();
+    result.name=name;
+    result.age=age;
+    result.getData=function()
+    {
+        console.log('The name of the person is : ' +name + ' ' + 'where the Age is : ' +age);
+
+    };
+
+    return result;
+    
+};
+
+var personData= personInfo("peter",27);
+
+personData.getData();
+
+d)function constructor:-
+
+- In javascript is possible to call any function with new opertor
+
+function Person(firstName,lastName)
+{
+    this.firstName=firstName;
+    this.lastName=lastName;
+
+    this.fullName=function()
+    {
+        return this.firstName + ' ' + this.lastName;
+    }
+}
+
+var personData= new Person("peter","parker");
+personData.fullName();
+
+e)Prototype :-
+- All javascript object inherit properties and methods from a prototype.
+
+var person=function(firstName,lastName)
+
+{
+    this.firstName=firstName;
+    this.lastName=lastName
+
+}
+
+person.prototype.fullName=function()
+{
+    return this.firstName + ' ' + this.lastName;
+}
+
+var personData= new person("peter","parker");
+
+personData.fullName();
+
+</pre>
+
+<body>
+
+</body>
+
+</html>

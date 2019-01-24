@@ -1,0 +1,42 @@
+<!Doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <pre>
+    Create person class and student class student should inherit from person and can access method full name
+</pre>
+
+    <script>
+        //class for the person is created here
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        Person.prototype.getFullName = function() {
+            return 'Your Full Name is: ' + this.firstName + ' ' + this.lastName;
+        }
+
+
+        //class for the student is created here:-
+        function student(firstName, lastName) {
+            Person.call(this, firstName, lastName);
+
+        }
+        student.prototype = Object.create(Person.prototype);
+
+        var StudentInfo = new student("Sourabh", "Shau");
+        console.log(StudentInfo.getFullName());
+    </script>
+
+</body>
+
+</html>

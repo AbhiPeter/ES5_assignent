@@ -1,0 +1,63 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignement 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <pre>
+    what is the difference between factory and constructor:-
+
+    - the basic difference is that constructor function is used with  new keyword
+        var objtfromconstructor= new constructor funtion();
+
+    -factory function is like a regular function without new keyword
+        var objfrom constructor=constructor function();
+        for factory it would need to return a  new instance of some object.
+    -Any function can return a new object when its not constructor or class its called as factory function
+
+
+Example for the constructor function:-
+
+    here we have used the new keyword when creating the objfrom constructor and calling the same from construcotr function
+    
+    var person = function(name,age){
+        this.name=name;
+        age.name=name;
+    }
+
+    var personData= new person("peter",32);
+    personData.name;
+
+
+    Example for factory function:-
+
+        var person=function(name,age)
+        {
+            var result= new object();
+            result.name=name;
+            result.age=age;
+
+            result.getData=function()
+            {
+                console.log("the name is given  as : " +name);
+            }
+
+            return result;
+        }
+
+    var personData=person("peter",32);
+    personData.getData();
+    
+
+</pre>
+
+</body>
+
+</html>

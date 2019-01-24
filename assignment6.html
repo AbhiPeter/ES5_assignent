@@ -1,0 +1,51 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <pre>
+
+    1)create a person class and add fucntion calclaute salary and get fullname
+</pre>
+
+
+
+    <script>
+        var person = function(firstName, lastName, basicSal, tds, hra) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.basicSal = basicSal;
+            this.tds = tds;
+            this.hra = hra;
+            this.salary = function() {
+                return this.hra + this.tds + this.basicSal;
+            }
+
+        }
+
+        person.prototype.getFullName = function() {
+            return "My Full Name is " + this.firstName + ' ' + this.lastName
+        }
+
+        var personFullname = new person("peter", "parker");
+
+        //here we can get the full name by calling fucntion which has been used in prototype:-
+        console.log(personFullname.getFullName());
+
+        //here we are creating new construtor to get the salary
+        var personSalary = new person("", "", 10000, 1200, 5000);
+
+        console.log(personSalary.salary());
+    </script>
+
+</body>
+
+</html>
